@@ -55,4 +55,6 @@ nginx -t # Check if configurations are valid
 systemctl reload nginx
 ```
 
+## 🌱 Resources
 
+- [SSH Actions](https://github.com/appleboy/ssh-action) - used to interact with the server within a Github Action workflow.
