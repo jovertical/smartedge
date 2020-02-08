@@ -2,6 +2,7 @@
 
 namespace Tests;
 
+use Faker\Factory;
 use Illuminate\Contracts\Console\Kernel;
 
 trait CreatesApplication
@@ -18,5 +19,15 @@ trait CreatesApplication
         $app->make(Kernel::class)->bootstrap();
 
         return $app;
+    }
+
+    /**
+     * Create a Faker Generator instance.
+     *
+     * @return \Faker\Generator
+     */
+    public function faker()
+    {
+        return Factory::create();
     }
 }

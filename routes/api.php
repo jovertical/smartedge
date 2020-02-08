@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+declare(strict_types=1);
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +13,15 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:airlock')->get('/user', static function (Request $request) {
-    return $request->user();
+Route::namespace('Api')->name('api.')->group(function (): void {
+    Route::namespace('Auth')->name('auth.')->group(function (): void {
+        Route::middleware('guest')->group(function () {
+            Route::post('/login', 'LoginController@login')->name('login');
+        });
+
+        Route::middleware('auth:airlock')->group(function (): void {
+            Route::get('/user', 'LoginController@user')->name('user');
+            Route::post('/logout', 'LoginController@logout')->name('logout');
+        });
+    });
 });
