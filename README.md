@@ -41,6 +41,7 @@ systemctl start nginx
 
 ```bash
 # Clone the Project
+git config --global credential.helper store
 git clone https://github.com/palonponjovertlota/smartedge.git /var/www/smartedge
 
 # Configure NGINX
