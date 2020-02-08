@@ -13,24 +13,24 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v1
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v1
-        with:
-          php-version: '7.4'
-          extensions: curl, mbstring, openssl, pdo, sqlite3, xml
-          coverage: none
+      # - name: Setup PHP
+      #   uses: shivammathur/setup-php@v1
+      #   with:
+      #     php-version: '7.4'
+      #     extensions: curl, mbstring, openssl, pdo, sqlite3, xml
+      #     coverage: none
 
-      - name: Install dependencies
-        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+      # - name: Install dependencies
+      #   run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
 
-      - name: Decrypt configuration file
-        run: ./.github/scripts/decrypt_secret.sh
-        env:
-          SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE_CI }}
-          APP_ENV: ci
+      # - name: Decrypt configuration file
+      #   run: ./.github/scripts/decrypt_secret.sh
+      #   env:
+      #     SECRET_PASSPHRASE: ${{ secrets.SECRET_PASSPHRASE_CI }}
+      #     APP_ENV: ci
 
-      - name: Run the test suite
-        run: composer test
+      # - name: Run the test suite
+      #   run: composer test
 
       - name: Deploy
         uses: appleboy/ssh-action@master
