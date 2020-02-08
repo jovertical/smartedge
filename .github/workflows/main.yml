@@ -65,6 +65,10 @@ jobs:
             # Run the migrations.
             php artisan migrate --force
 
+            # Give proper file ownership & permissions.
+            chown -R www-data bootstrap/cache storage
+            chmod 775 bootstrap/cache storage
+
             # Finish deployment.
             php artisan up
 

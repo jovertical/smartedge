@@ -40,9 +40,13 @@ systemctl start nginx
 ## 💡 Application Setup
 
 ```bash
-# Clone the Project
+# Clone the project
 git config --global credential.helper store # Prevents promting credentials the second time.
 git clone https://github.com/palonponjovertlota/smartedge.git /var/www/smartedge
+
+# Set proper file permissions
+find /var/www/smartedge -type f -exec chmod 644 {} \;
+find /var/www/smartedge -type d -exec chmod 755 {} \;
 
 # Configure NGINX
 cp /var/www/smartedge/nginx.conf /etc/nginx/sites-available/
@@ -50,3 +54,5 @@ ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/
 nginx -t # Check if configurations are valid
 systemctl reload nginx
 ```
+
+
