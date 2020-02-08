@@ -49,6 +49,12 @@ jobs:
             rm -rf .env && SECRET_PASSPHRASE=${{ secrets.SECRET_PASSPHRASE_PRODUCTION }} APP_ENV=production sh .github/scripts/decrypt_secret.sh
             composer install --optimize-autoloader --no-dev
 
+            # Refresh NGINX configurations.
+            unlink /etc/nginx/sites-enabled/nginx.conf
+            ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/
+            nginx -t
+            systemctl reload nginx
+
             # Run the migrations.
             php artisan migrate --force
 
@@ -60,8 +66,3 @@ jobs:
             # Finish deployment.
             php artisan up
 
-            # Refresh NGINX configurations.
-            unlink /etc/nginx/sites-enabled/nginx.conf
-            ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/
-            nginx -t
-            systemctl reload nginx
