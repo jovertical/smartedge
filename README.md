@@ -17,39 +17,34 @@ php artisan serve
 ```bash
 # Just a good practice.
 apt-get update
-apt-get install -y software-properties-common
+apt-get install -y software-properties-common zip unzip
 
 # Add PHP to the apt repository list.
-add-apt-repository ppa:ondrej/php
+add-apt-repository -y ppa:ondrej/php
 apt-get update
 
 ## Install PHP + Extensions.
-apt-get install -y php7.4
-apt-get install -y php-{bcmath,mbstring,xml}
+apt-get install -y php7.4-fpm
+apt-get install -y php7.4-{bcmath,mbstring,xml}
 
 ## Install Composer
 apt-get install -y composer
 
 ## Install NGINX
 apt-get install -y nginx
+
+## Start NGINX
+systemctl start nginx
 ```
 
 ## 💡 Application Setup
 
 ```bash
 # Clone the Project
-cd /var/www
-git clone https://github.com/palonponjovertlota/smartedge.git smartedge
-
-# This is the happy path...
-cd /var/www/smartedge
-chown -R www-data:www-data storage bootstrap
-
-# Install dependencies
-composer install
+git clone https://github.com/palonponjovertlota/smartedge.git /var/www/smartedge
 
 # Configure NGINX
-cp nginx.conf /etc/nginx/sites-available/
+cp /var/www/smartedge/nginx.conf /etc/nginx/sites-available/
 ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/
 nginx -t # Check if configurations are valid
 systemctl reload nginx
