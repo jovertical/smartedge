@@ -1,10 +1,10 @@
 <?php
 
-namespace SmartEdge\Http\Middleware;
+namespace App\Http\Middleware;
 
+use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use SmartEdge\Providers\RouteServiceProvider;
 
 class RedirectIfAuthenticated
 {

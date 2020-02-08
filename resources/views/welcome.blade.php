@@ -1,1 +1,1 @@
-<h1>SmartEdge</h1>
+<h1>App</h1>

@@ -15,4 +15,4 @@ Route::get('/', static function () {
     return view('welcome');
 });
 
-Route::get('/users', static fn () => \SmartEdge\Models\User::all());
+Route::get('/users', static fn () => \App\Models\User::all());

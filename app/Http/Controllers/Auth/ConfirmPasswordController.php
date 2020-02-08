@@ -1,10 +1,10 @@
 <?php
 
-namespace SmartEdge\Http\Controllers\Auth;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\ConfirmsPasswords;
-use SmartEdge\Http\Controllers\Controller;
-use SmartEdge\Providers\RouteServiceProvider;
 
 class ConfirmPasswordController extends Controller
 {

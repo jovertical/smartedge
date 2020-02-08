@@ -169,11 +169,11 @@ return [
         /*
          * Application Service Providers...
          */
-        SmartEdge\Providers\AppServiceProvider::class,
-        SmartEdge\Providers\AuthServiceProvider::class,
-        // SmartEdge\Providers\BroadcastServiceProvider::class,
-        SmartEdge\Providers\EventServiceProvider::class,
-        SmartEdge\Providers\RouteServiceProvider::class,
+        App\Providers\AppServiceProvider::class,
+        App\Providers\AuthServiceProvider::class,
+        // App\Providers\BroadcastServiceProvider::class,
+        App\Providers\EventServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,
 
     ],
 
