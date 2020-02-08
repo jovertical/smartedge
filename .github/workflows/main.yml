@@ -39,7 +39,7 @@ jobs:
           username: root
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /var/www/smartedge
+            cd /var/www/smartedge            
             
             # Put the app in to maintenance mode.
             php artisan down
@@ -59,3 +59,9 @@ jobs:
 
             # Finish deployment.
             php artisan up
+
+            # Refresh NGINX configurations.
+            unlink /etc/nginx/sites-enabled/nginx.conf
+            ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/
+            nginx -t
+            systemctl reload nginx

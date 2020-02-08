@@ -25,7 +25,7 @@ apt-get update
 
 ## Install PHP + Extensions.
 apt-get install -y php7.4-fpm
-apt-get install -y php7.4-{bcmath,mbstring,xml}
+apt-get install -y php7.4-{curl,mbstring,pdo,pgsql,xml}
 
 ## Install Composer
 apt-get install -y composer
@@ -41,7 +41,7 @@ systemctl start nginx
 
 ```bash
 # Clone the Project
-git config --global credential.helper store
+git config --global credential.helper store # Prevents promting credentials the second time.
 git clone https://github.com/palonponjovertlota/smartedge.git /var/www/smartedge
 
 # Configure NGINX
