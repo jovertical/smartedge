@@ -51,17 +51,19 @@ jobs:
 
             # Refresh NGINX configurations.
             unlink /etc/nginx/sites-enabled/nginx.conf
+            rm -f /etc/nginx/sites-available/nginx.conf
+            cp nginx.conf /etc/nginx/sites-available/
             ln -s /etc/nginx/sites-available/nginx.conf /etc/nginx/sites-enabled/
             nginx -t
             systemctl reload nginx
-
-            # Run the migrations.
-            php artisan migrate --force
 
             # Optimize Laravel.
             php artisan config:cache
             php artisan route:cache
             php artisan view:cache
+
+            # Run the migrations.
+            php artisan migrate --force
 
             # Finish deployment.
             php artisan up
