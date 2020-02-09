@@ -14,7 +14,7 @@ declare(strict_types=1);
 */
 
 Route::namespace('Api')->name('api.')->group(function (): void {
-    Route::namespace('Auth')->name('auth.')->group(function (): void {
+    Route::namespace('Auth')->name('auth.')->prefix('auth')->group(function (): void {
         Route::middleware('guest')->group(function () {
             Route::post('/login', 'LoginController@login')->name('login');
         });
