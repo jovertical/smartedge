@@ -21,6 +21,6 @@ class ApiUsersControllerTest extends TestCase
 
         $this->get(route('api.users.index'))
             ->assertOk()
-            ->assertExactJson(User::get()->toArray());
+            ->assertExactJson(User::with('reviewee_profile')->get()->toArray());
     }
 }
