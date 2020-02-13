@@ -61,6 +61,7 @@ class UsersTableSeeder extends Seeder
             RevieweeProfile::create([
                 'reviewee_number' => '000003',
                 'enrolled_for' => 'ECE BOARD 2020',
+                'expired_at' => now()
             ])
         );
     }

@@ -31,6 +31,10 @@ class LoginController extends Controller
  
     public function user(Request $request)
     {
+        if ($request->user()->type === 'reviewee') {
+            return User::with('reviewee_profile')->find($request->user()->id);
+        }
+
         return $request->user();
     }
 

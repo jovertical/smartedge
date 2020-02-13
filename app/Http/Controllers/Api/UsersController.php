@@ -11,9 +11,15 @@ class UsersController extends Controller
     public function index(Request $request)
     {
         if ($type = $request->get('type')) {
-            return User::where('type', $type)->with('reviewee_profile')->get();
+            if ($type === 'reviewee') {
+                return User::where('type', 'reviewee')
+                    ->with('reviewee_profile')
+                    ->get();
+            }
+        
+            return User::where('type', $type)->get();
         }
 
-        return User::with('reviewee_profile')->get();
+        return User::all();
     }
 }
