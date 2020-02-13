@@ -1,7 +1,5 @@
 <?php
 
-declare(strict_types=1);
-
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,15 +11,19 @@ declare(strict_types=1);
 |
 */
 
-Route::namespace('Api')->name('api.')->group(function (): void {
-    Route::namespace('Auth')->name('auth.')->prefix('auth')->group(function (): void {
+Route::namespace('Api')->name('api.')->group(function () {
+    Route::namespace('Auth')->name('auth.')->prefix('auth')->group(function () {
         Route::middleware('guest')->group(function () {
             Route::post('/login', 'LoginController@login')->name('login');
         });
 
-        Route::middleware('auth:airlock')->group(function (): void {
+        Route::middleware('auth:airlock')->group(function () {
             Route::get('/user', 'LoginController@user')->name('user');
             Route::post('/logout', 'LoginController@logout')->name('logout');
         });
+    });
+
+    Route::middleware(['auth:airlock', 'admin'])->group(function () {
+        Route::resource('users', 'UsersController')->except('create', 'edit');
     });
 });

@@ -11,8 +11,4 @@
 |
 */
 
-Route::get('/', static function () {
-    return view('welcome');
-});
-
-Route::get('/users', static fn () => \App\Models\User::all());
+Route::get('/', 'PagesController@index');
