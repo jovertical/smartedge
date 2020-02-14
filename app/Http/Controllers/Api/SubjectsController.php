@@ -72,8 +72,6 @@ class SubjectsController extends Controller
      */
     public function destroy(Subject $subject)
     {
-        $subject->delete();
-
-        return $subject;
+        return $subject->delete();
     }
 }
