@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\RevieweeProfile;
-use App\Models\User;
+use App\RevieweeProfile;
+use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 

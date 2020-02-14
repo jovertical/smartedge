@@ -23,7 +23,8 @@ Route::namespace('Api')->name('api.')->group(function () {
         });
     });
 
-    Route::middleware(['auth:airlock', 'admin'])->group(function () {
-        Route::resource('users', 'UsersController')->except('create', 'edit');
+    Route::middleware('auth:airlock')->group(function () {
+        Route::apiResource('users', 'UsersController')->middleware('admin');
+        Route::apiResource('subjects', 'SubjectsController');
     });
 });

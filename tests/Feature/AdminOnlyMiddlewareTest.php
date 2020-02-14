@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\Models\User;
+use App\User;
 use Auth;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Airlock\Airlock;
