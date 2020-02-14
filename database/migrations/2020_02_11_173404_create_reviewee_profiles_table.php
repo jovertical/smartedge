@@ -20,6 +20,7 @@ class CreateRevieweeProfilesTable extends Migration
             $table->string('enrolled_for');
             $table->timestamp('expired_at')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
