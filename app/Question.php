@@ -8,4 +8,9 @@ class Question extends Model
     {
         return $this->belongsTo(Subject::class);
     }
+
+    public function answers()
+    {
+        return $this->hasMany(Answer::class);
+    }
 }

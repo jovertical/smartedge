@@ -2,49 +2,50 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Answer;
 use App\Http\Controllers\Controller;
-use App\Question;
 use Illuminate\Http\Request;
 
-class QuestionsController extends Controller
+class AnswersController extends Controller
 {
     /**
      * Display the specified resource.
      *
-     * @param  \App\Question  $question
+     * @param  \App\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function show(Question $question)
+    public function show(Answer $answer)
     {
-        return $question;
+        return $answer;
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Question  $question
+     * @param  \App\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Question $question)
+    public function update(Request $request, Answer $answer)
     {
         $request->validate([
             'body' => 'required|string|max:500',
+            'correct' => 'boolean',
         ]);
 
-        $question->update($request->only('body'));
+        $answer->update($request->only('body', 'correct'));
 
-        return $question;
+        return $answer;
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Question  $question
+     * @param  \App\Answer  $answer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Question $question)
+    public function destroy(Answer $answer)
     {
-        $question->delete();
+        $answer->delete();
     }
 }

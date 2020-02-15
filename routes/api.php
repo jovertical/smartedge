@@ -30,5 +30,9 @@ Route::namespace('Api')->name('api.')->group(function () {
             ->except('index', 'store');
         Route::apiResource('subjects/{subject}/questions', 'SubjectQuestionsController')
             ->only('index', 'store');
+        Route::apiResource('answers', 'AnswersController')
+            ->except('index', 'store');
+        Route::apiResource('questions/{question}/answers', 'QuestionAnswersController')
+            ->only('index', 'store');
     });
 });
