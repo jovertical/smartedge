@@ -42,7 +42,7 @@ class SubjectsController extends Controller
      */
     public function show(Subject $subject)
     {
-        return $subject->with('questions')->first();
+        return Subject::with('questions')->find($subject->id);
     }
 
     /**
@@ -61,7 +61,7 @@ class SubjectsController extends Controller
 
         $subject->update($request->only(['name', 'body']));
 
-        return $subject->with('questions')->first();
+        return Subject::with('questions')->find($subject->id);
     }
 
     /**

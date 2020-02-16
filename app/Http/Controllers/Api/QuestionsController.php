@@ -16,7 +16,7 @@ class QuestionsController extends Controller
      */
     public function show(Question $question)
     {
-        return $question->with('answers')->first();
+        return Question::with('answers')->find($question->id);
     }
 
     /**
@@ -34,7 +34,7 @@ class QuestionsController extends Controller
 
         $question->update($request->only('body'));
 
-        return $question->with('answers')->first();
+        return Question::with('answers')->find($question->id);
     }
 
     /**
