@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class SubjectQuestionsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Question in a Subject.
      *
      * @param  \App\Subject $subject
      * @return \Illuminate\Http\Response
@@ -20,7 +20,7 @@ class SubjectQuestionsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Question for a Subject in storage.
 
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Subject $subject

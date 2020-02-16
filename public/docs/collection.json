@@ -2,7 +2,7 @@
     "variables": [],
     "info": {
         "name": "SmartEdge API",
-        "_postman_id": "73a03205-2e35-42d3-873e-335d40775d37",
+        "_postman_id": "2350df30-29e4-4970-8215-f9e0369de309",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -124,7 +124,7 @@
                     }
                 },
                 {
-                    "name": "api\/users",
+                    "name": "Display a listing of the User.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -152,7 +152,7 @@
                     }
                 },
                 {
-                    "name": "Display a listing of the resource.",
+                    "name": "Display a listing of the Subject.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -180,7 +180,7 @@
                     }
                 },
                 {
-                    "name": "Store a newly created resource in storage.",
+                    "name": "Store a newly created Subject in storage.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -208,7 +208,7 @@
                     }
                 },
                 {
-                    "name": "Display the specified resource.",
+                    "name": "Display the specified Subject.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -236,7 +236,7 @@
                     }
                 },
                 {
-                    "name": "Update the specified resource in storage.",
+                    "name": "Update the specified Subject in storage.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -264,7 +264,7 @@
                     }
                 },
                 {
-                    "name": "Remove the specified resource from storage.",
+                    "name": "Remove the specified Subject from storage.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -292,7 +292,7 @@
                     }
                 },
                 {
-                    "name": "Display the specified resource.",
+                    "name": "Display the specified Question.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -320,7 +320,7 @@
                     }
                 },
                 {
-                    "name": "Update the specified resource in storage.",
+                    "name": "Update the specified Question in storage.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -348,7 +348,7 @@
                     }
                 },
                 {
-                    "name": "Remove the specified resource from storage.",
+                    "name": "Remove the specified Question from storage.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -376,7 +376,7 @@
                     }
                 },
                 {
-                    "name": "Display a listing of the resource.",
+                    "name": "Display a listing of the Question in a Subject.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -404,7 +404,7 @@
                     }
                 },
                 {
-                    "name": "Store a newly created resource in storage.",
+                    "name": "Store a newly created Question for a Subject in storage.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -432,7 +432,7 @@
                     }
                 },
                 {
-                    "name": "Display the specified resource.",
+                    "name": "Display the specified Answer.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -460,7 +460,7 @@
                     }
                 },
                 {
-                    "name": "Update the specified resource in storage.",
+                    "name": "Update the specified Answer in storage.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -488,7 +488,7 @@
                     }
                 },
                 {
-                    "name": "Remove the specified resource from storage.",
+                    "name": "Remove the specified Answer from storage.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -516,7 +516,7 @@
                     }
                 },
                 {
-                    "name": "Display a listing of the resource.",
+                    "name": "Display a listing of the Answer in a Question.",
                     "request": {
                         "url": {
                             "protocol": "http",
@@ -544,7 +544,7 @@
                     }
                 },
                 {
-                    "name": "Store a newly created resource in storage.",
+                    "name": "Store a newly created Answer for a Question in storage.",
                     "request": {
                         "url": {
                             "protocol": "http",

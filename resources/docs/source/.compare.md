@@ -180,7 +180,8 @@ fetch(url, {
 <!-- END_19ff1b6f8ce19d3c444e9b518e8f7160 -->
 
 <!-- START_fc1e4f6a697e3c48257de845299b71d5 -->
-## api/users
+## Display a listing of the User.
+
 > Example request:
 
 ```bash
@@ -224,7 +225,7 @@ fetch(url, {
 <!-- END_fc1e4f6a697e3c48257de845299b71d5 -->
 
 <!-- START_4bf6e6d3497dbfaa1032662aefa64aab -->
-## Display a listing of the resource.
+## Display a listing of the Subject.
 
 > Example request:
 
@@ -269,7 +270,7 @@ fetch(url, {
 <!-- END_4bf6e6d3497dbfaa1032662aefa64aab -->
 
 <!-- START_43272bbfe03b16b2a8825261845f6f29 -->
-## Store a newly created resource in storage.
+## Store a newly created Subject in storage.
 
 > Example request:
 
@@ -307,7 +308,7 @@ fetch(url, {
 <!-- END_43272bbfe03b16b2a8825261845f6f29 -->
 
 <!-- START_e98c7bbd4c50edae6cb0f79873b7e602 -->
-## Display the specified resource.
+## Display the specified Subject.
 
 > Example request:
 
@@ -352,7 +353,7 @@ fetch(url, {
 <!-- END_e98c7bbd4c50edae6cb0f79873b7e602 -->
 
 <!-- START_7e0530486433a18a0d3d2cd4f5fdbb30 -->
-## Update the specified resource in storage.
+## Update the specified Subject in storage.
 
 > Example request:
 
@@ -392,7 +393,7 @@ fetch(url, {
 <!-- END_7e0530486433a18a0d3d2cd4f5fdbb30 -->
 
 <!-- START_775668ab35c1b90b39dc084da6492c2f -->
-## Remove the specified resource from storage.
+## Remove the specified Subject from storage.
 
 > Example request:
 
@@ -430,7 +431,7 @@ fetch(url, {
 <!-- END_775668ab35c1b90b39dc084da6492c2f -->
 
 <!-- START_f605dcf2ca92a58323db87f649ac1dae -->
-## Display the specified resource.
+## Display the specified Question.
 
 > Example request:
 
@@ -475,7 +476,7 @@ fetch(url, {
 <!-- END_f605dcf2ca92a58323db87f649ac1dae -->
 
 <!-- START_1bebccad423fb430073b434655c9df9e -->
-## Update the specified resource in storage.
+## Update the specified Question in storage.
 
 > Example request:
 
@@ -515,7 +516,7 @@ fetch(url, {
 <!-- END_1bebccad423fb430073b434655c9df9e -->
 
 <!-- START_cb5299e7a9fce3c463c5f52278e9fae0 -->
-## Remove the specified resource from storage.
+## Remove the specified Question from storage.
 
 > Example request:
 
@@ -553,7 +554,7 @@ fetch(url, {
 <!-- END_cb5299e7a9fce3c463c5f52278e9fae0 -->
 
 <!-- START_4f55dfa66543949481f1033f91a1a938 -->
-## Display a listing of the resource.
+## Display a listing of the Question in a Subject.
 
 > Example request:
 
@@ -598,7 +599,7 @@ fetch(url, {
 <!-- END_4f55dfa66543949481f1033f91a1a938 -->
 
 <!-- START_2aac6a232fd6c11b2e18c01889df4a8c -->
-## Store a newly created resource in storage.
+## Store a newly created Question for a Subject in storage.
 
 > Example request:
 
@@ -636,7 +637,7 @@ fetch(url, {
 <!-- END_2aac6a232fd6c11b2e18c01889df4a8c -->
 
 <!-- START_2b390d72350a482fc19b0e8670afe9c4 -->
-## Display the specified resource.
+## Display the specified Answer.
 
 > Example request:
 
@@ -681,7 +682,7 @@ fetch(url, {
 <!-- END_2b390d72350a482fc19b0e8670afe9c4 -->
 
 <!-- START_09fd9e8518c9b604d36eb4242512829d -->
-## Update the specified resource in storage.
+## Update the specified Answer in storage.
 
 > Example request:
 
@@ -721,7 +722,7 @@ fetch(url, {
 <!-- END_09fd9e8518c9b604d36eb4242512829d -->
 
 <!-- START_c04468caefc10a779cf1380faeb8d92c -->
-## Remove the specified resource from storage.
+## Remove the specified Answer from storage.
 
 > Example request:
 
@@ -759,7 +760,7 @@ fetch(url, {
 <!-- END_c04468caefc10a779cf1380faeb8d92c -->
 
 <!-- START_c62321bd8a21519aef8cb5053dbcda11 -->
-## Display a listing of the resource.
+## Display a listing of the Answer in a Question.
 
 > Example request:
 
@@ -804,7 +805,7 @@ fetch(url, {
 <!-- END_c62321bd8a21519aef8cb5053dbcda11 -->
 
 <!-- START_d765a79114a96ad09c9b3e1487aca92d -->
-## Store a newly created resource in storage.
+## Store a newly created Answer for a Question in storage.
 
 > Example request:
 

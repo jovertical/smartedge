@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class QuestionsController extends Controller
 {
     /**
-     * Display the specified resource.
+     * Display the specified Question.
      *
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response
@@ -20,7 +20,7 @@ class QuestionsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified Question in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Question  $question
@@ -38,7 +38,7 @@ class QuestionsController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Question from storage.
      *
      * @param  \App\Question  $question
      * @return \Illuminate\Http\Response

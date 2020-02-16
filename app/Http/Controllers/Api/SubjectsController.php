@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class SubjectsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the Subject.
      *
      * @return \Illuminate\Http\Response
      */
@@ -19,7 +19,7 @@ class SubjectsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created Subject in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -35,7 +35,7 @@ class SubjectsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified Subject.
      *
      * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response
@@ -46,7 +46,7 @@ class SubjectsController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified Subject in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \App\Subject  $subject
@@ -65,7 +65,7 @@ class SubjectsController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified Subject from storage.
      *
      * @param  \App\Subject  $subject
      * @return \Illuminate\Http\Response

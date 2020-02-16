@@ -8,6 +8,11 @@ use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
+    /**
+     * Display a listing of the User.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index(Request $request)
     {
         if ($type = $request->get('type')) {

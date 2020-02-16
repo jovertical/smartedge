@@ -55,6 +55,18 @@ nginx -t # Check if configurations are valid
 systemctl reload nginx
 ```
 
+## 📜 API Documentation
+
+### Generating the Documentation
+
+```
+php artisan apidoc:generate
+```
+
+### Viewing the Documention
+
+Visit: `<app-url>/docs/index.html`
+
 ## 🌱 Resources
 
 - [SSH Actions](https://github.com/appleboy/ssh-action) - used to interact with the server within a Github Action workflow.
