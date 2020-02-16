@@ -32,6 +32,12 @@ class AnswersController extends Controller
             'body' => 'required|string|max:500',
             'correct' => 'boolean',
         ]);
+        
+        if ($request->correct) {
+            $answer->question->answers->each(function ($a) { 
+                $a->update(['correct' => false]);
+            });
+        }
 
         $answer->update($request->only('body', 'correct'));
 
