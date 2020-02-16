@@ -12,6 +12,32 @@
 
 namespace App{
 /**
+ * App\Question
+ *
+ * @property int $id
+ * @property int $subject_id
+ * @property string $body
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Answer[] $answers
+ * @property-read int|null $answers_count
+ * @property-read \App\Subject $subject
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Question newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Question newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Question query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Question whereBody($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Question whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Question whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Question whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Question whereSubjectId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Question whereUpdatedAt($value)
+ */
+	class Question extends \Eloquent {}
+}
+
+namespace App{
+/**
  * App\User
  *
  * @property int $id
@@ -48,9 +74,7 @@ namespace App{
  * @method static \Illuminate\Database\Query\Builder|\App\User withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\User withoutTrashed()
  */
-    class User extends \Eloquent
-    {
-    }
+	class User extends \Eloquent {}
 }
 
 namespace App{
@@ -66,9 +90,7 @@ namespace App{
  * @method static \Illuminate\Database\Query\Builder|\App\Model withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Model withoutTrashed()
  */
-    class Model extends \Eloquent
-    {
-    }
+	class Model extends \Eloquent {}
 }
 
 namespace App{
@@ -96,9 +118,33 @@ namespace App{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\RevieweeProfile whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\RevieweeProfile whereUserId($value)
  */
-    class RevieweeProfile extends \Eloquent
-    {
-    }
+	class RevieweeProfile extends \Eloquent {}
+}
+
+namespace App{
+/**
+ * App\Answer
+ *
+ * @property int $id
+ * @property int $question_id
+ * @property string $body
+ * @property int $correct
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \App\Question $question
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Answer newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Answer newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Answer query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Answer whereBody($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Answer whereCorrect($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Answer whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Answer whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Answer whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Answer whereQuestionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Answer whereUpdatedAt($value)
+ */
+	class Answer extends \Eloquent {}
 }
 
 namespace App{
@@ -107,10 +153,12 @@ namespace App{
  *
  * @property int $id
  * @property string $name
- * @property string $body
+ * @property string|null $body
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Question[] $questions
+ * @property-read int|null $questions_count
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Subject newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Subject newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Subject query()
@@ -121,7 +169,6 @@ namespace App{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Subject whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Subject whereUpdatedAt($value)
  */
-    class Subject extends \Eloquent
-    {
-    }
+	class Subject extends \Eloquent {}
 }
+
