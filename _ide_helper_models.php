@@ -33,7 +33,9 @@ namespace App{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Question whereSubjectId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Question whereUpdatedAt($value)
  */
-	class Question extends \Eloquent {}
+    class Question extends \Eloquent
+    {
+    }
 }
 
 namespace App{
@@ -74,7 +76,9 @@ namespace App{
  * @method static \Illuminate\Database\Query\Builder|\App\User withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\User withoutTrashed()
  */
-	class User extends \Eloquent {}
+    class User extends \Eloquent
+    {
+    }
 }
 
 namespace App{
@@ -90,7 +94,9 @@ namespace App{
  * @method static \Illuminate\Database\Query\Builder|\App\Model withTrashed()
  * @method static \Illuminate\Database\Query\Builder|\App\Model withoutTrashed()
  */
-	class Model extends \Eloquent {}
+    class Model extends \Eloquent
+    {
+    }
 }
 
 namespace App{
@@ -118,7 +124,9 @@ namespace App{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\RevieweeProfile whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\RevieweeProfile whereUserId($value)
  */
-	class RevieweeProfile extends \Eloquent {}
+    class RevieweeProfile extends \Eloquent
+    {
+    }
 }
 
 namespace App{
@@ -144,7 +152,9 @@ namespace App{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Answer whereQuestionId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Answer whereUpdatedAt($value)
  */
-	class Answer extends \Eloquent {}
+    class Answer extends \Eloquent
+    {
+    }
 }
 
 namespace App{
@@ -169,6 +179,7 @@ namespace App{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Subject whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Subject whereUpdatedAt($value)
  */
-	class Subject extends \Eloquent {}
+    class Subject extends \Eloquent
+    {
+    }
 }
-
