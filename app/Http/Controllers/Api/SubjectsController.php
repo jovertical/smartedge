@@ -28,7 +28,7 @@ class SubjectsController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
-            'body' => 'string|max:500',
+            'body' => 'max:500',
         ]);
 
         return Subject::create($request->only(['name', 'body']));
@@ -56,7 +56,7 @@ class SubjectsController extends Controller
     {
         $request->validate([
             'name' => 'required|string',
-            'body' => 'string|max:500',
+            'body' => 'max:500',
         ]);
 
         $subject->update($request->only(['name', 'body']));
