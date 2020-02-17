@@ -16,7 +16,7 @@ class SubjectQuestionsController extends Controller
      */
     public function index(Subject $subject)
     {
-        return $subject->questions()->get();
+        return $subject->questions;
     }
 
     /**

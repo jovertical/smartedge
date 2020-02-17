@@ -16,7 +16,7 @@ class QuestionAnswersController extends Controller
      */
     public function index(Question $question)
     {
-        return $question->answers()->get();
+        return $question->answers;
     }
 
     /**

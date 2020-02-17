@@ -34,7 +34,7 @@ class AnswersController extends Controller
         ]);
         
         if ($request->correct) {
-            $answer->question->answers->each(function ($a) { 
+            $answer->question->answers->each(function ($a) {
                 $a->update(['correct' => false]);
             });
         }
