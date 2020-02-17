@@ -19,7 +19,7 @@ class CreateQuizzesTable extends Migration
             $table->bigInteger('subject_id');
             $table->enum('time_mode', ['classic', 'timed', '']);
             $table->enum('checking_mode', ['per_item', 'per_quiz']);
-            $table->integer('questions_count');
+            $table->integer('question_count');
             $table->timestamp('completed_at')->nullable();
             $table->timestamps();
             $table->softDeletes();
