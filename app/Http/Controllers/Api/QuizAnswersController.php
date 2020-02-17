@@ -12,7 +12,7 @@ class QuizAnswersController extends Controller
     /**
      * Display a listing of the QuizAnswer in a Quiz.
      *
-     * @param  \App\Subject $subject
+     * @param  \App\Quiz $quiz
      * @return \Illuminate\Http\Response
      */
     public function index(Quiz $quiz)
@@ -24,7 +24,7 @@ class QuizAnswersController extends Controller
      * Store a newly created QuizAnswer for a Quiz in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Subject $subject
+     * @param  \App\Quiz $quiz
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request, Quiz $quiz)

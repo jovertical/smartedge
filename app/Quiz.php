@@ -11,7 +11,17 @@ class Quiz extends Model
 
     public function subject()
     {
-        return $this->hasOne(Subject::class);
+        return $this->belongsTo(Subject::class);
+    }
+
+    public function questions()
+    {
+        return $this->hasMany(QuizQuestion::class);
+    }
+
+    public function createQuestion($attributes)
+    {
+        return $this->questions()->create($attributes);
     }
 
     public function answers()
