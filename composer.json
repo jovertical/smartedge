@@ -9,6 +9,7 @@
         "fzaninotto/faker": "^1.9.1",
         "laravel/airlock": "^0.2.0",
         "laravel/framework": "^6.2",
+        "laravel/telescope": "^2.1",
         "laravel/tinker": "^2.0"
     },
     "require-dev": {
