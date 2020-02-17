@@ -41,4 +41,14 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne(RevieweeProfile::class, 'user_id');
     }
+
+    public function quizzes()
+    {
+        return $this->hasMany(Quiz::class);
+    }
+
+    public function createQuiz($attributes)
+    {
+        return $this->quizzes()->create($attributes);
+    }
 }

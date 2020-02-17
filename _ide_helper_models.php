@@ -40,6 +40,32 @@ namespace App{
 
 namespace App{
 /**
+ * App\QuizAnswer
+ *
+ * @property int $id
+ * @property int $quiz_id
+ * @property int $answer_id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \App\Quiz $quiz
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizAnswer newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizAnswer newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizAnswer query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizAnswer whereAnswerId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizAnswer whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizAnswer whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizAnswer whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizAnswer whereQuizId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizAnswer whereUpdatedAt($value)
+ */
+    class QuizAnswer extends \Eloquent
+    {
+    }
+}
+
+namespace App{
+/**
  * App\User
  *
  * @property int $id
@@ -54,6 +80,8 @@ namespace App{
  * @property \Illuminate\Support\Carbon|null $deleted_at
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Quiz[] $quizzes
+ * @property-read int|null $quizzes_count
  * @property-read \App\RevieweeProfile $reviewee_profile
  * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Airlock\PersonalAccessToken[] $tokens
  * @property-read int|null $tokens_count
@@ -153,6 +181,41 @@ namespace App{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Answer whereUpdatedAt($value)
  */
     class Answer extends \Eloquent
+    {
+    }
+}
+
+namespace App{
+/**
+ * App\Quiz
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property int $subject_id
+ * @property string $time_mode
+ * @property int $questions_count
+ * @property string $checking_mode
+ * @property string|null $completed_at
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \App\Subject $subject
+ * @property-read \App\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereCheckingMode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereCompletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereQuestionsCount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereSubjectId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereTimeMode($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereUserId($value)
+ */
+    class Quiz extends \Eloquent
     {
     }
 }

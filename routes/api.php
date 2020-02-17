@@ -34,5 +34,10 @@ Route::namespace('Api')->name('api.')->group(function () {
             ->except('index', 'store');
         Route::apiResource('questions/{question}/answers', 'QuestionAnswersController')
             ->only('index', 'store');
+
+        Route::post('subjects/{subject}/quizzes', 'SubjectQuizzesController@store');
+        // Route::apiResource('quizzes', 'QuizzesController')->only('update');
+        Route::apiResource('quizzes/{quiz}/answers', 'QuizAnswersController')
+            ->only('index', 'store');
     });
 });
