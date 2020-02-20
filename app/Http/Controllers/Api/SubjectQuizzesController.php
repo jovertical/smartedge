@@ -22,7 +22,7 @@ class SubjectQuizzesController extends Controller
         $request->validate([
             'time_mode' => 'required|in:classic,timed',
             'checking_mode' => 'required|in:per_item,per_quiz',
-            'questions_count' => 'required|integer',
+            'question_count' => 'required|integer',
         ]);
 
         $user = User::find(Auth::id());
@@ -30,7 +30,7 @@ class SubjectQuizzesController extends Controller
         $attributes = $request->only(
             'time_mode',
             'checking_mode',
-            'questions_count'
+            'question_count'
         );
 
         return $user->createQuiz(array_merge($attributes, [
