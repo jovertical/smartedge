@@ -11,10 +11,12 @@ class QuizController extends Controller
 {
     public function activeQuiz(Request $request)
     {
-        return $request->user()
+        $quiz = $request->user()
             ->quizzes
             ->where('completed_at', null)
             ->first();
+
+        return Quiz::with('answers')->find($quiz->id);
     }
 
     public function nextQuestion(Quiz $quiz)
