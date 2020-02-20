@@ -27,4 +27,15 @@ class UsersController extends Controller
 
         return User::all();
     }
+
+    /**
+     * Display the specified User.
+     *
+     * @param  \App\User  $user
+     * @return \Illuminate\Http\Response
+     */
+    public function show(User $user)
+    {
+        return User::with('quizzes')->find($user->id);
+    }
 }

@@ -24,7 +24,8 @@ Route::namespace('Api')->name('api.')->group(function () {
     });
 
     Route::middleware('auth:airlock')->group(function () {
-        Route::apiResource('users', 'UsersController')->middleware('admin');
+        Route::apiResource('users', 'UsersController')
+            ->only('index', 'show');
         Route::apiResource('subjects', 'SubjectsController');
         Route::apiResource('questions', 'QuestionsController')
             ->except('index', 'store');
