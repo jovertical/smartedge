@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Question;
 use App\Quiz;
 use Illuminate\Http\Request;
 
@@ -20,9 +21,12 @@ class QuizController extends Controller
     {
         $answers = $quiz->answers->pluck('question_id')->toArray();
 
-        return $quiz->questions
+        $question = $quiz->questions
             ->filter(fn ($q) => !in_array($q->question_id, $answers))
             ->values()
-            ->first();
+            ->first()
+            ->question;
+
+        return Question::with('answers')->find($question->id);
     }
 }
