@@ -16,6 +16,7 @@ class CreateQuizAnswersTable extends Migration
         Schema::create('quiz_answers', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->bigInteger('quiz_id');
+            $table->bigInteger('question_id');
             $table->bigInteger('answer_id');
             $table->timestamps();
             $table->softDeletes();

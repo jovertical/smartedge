@@ -31,6 +31,9 @@ class QuizAnswersController extends Controller
     {
         $answer = Answer::findOrFail($request->answer_id);
 
-        return $quiz->createAnswer([ 'answer_id' => $answer->id ]);
+        return $quiz->createAnswer([
+            'answer_id' => $answer->id,
+            'question_id' => $answer->question_id,
+        ]);
     }
 }
