@@ -43,5 +43,10 @@ Route::namespace('Api')->name('api.')->group(function () {
             ->only('index', 'store', 'destroy');
         Route::apiResource('quizzes/{quiz}/answers', 'QuizAnswersController')
             ->only('index', 'store');
+
+        Route::prefix('quiz')->group(function () {
+            Route::get('active', 'QuizController@activeQuiz');
+            Route::get('{quiz}/next-question', 'QuizController@nextQuestion');
+        });
     });
 });

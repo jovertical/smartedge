@@ -51,4 +51,9 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->quizzes()->create($attributes);
     }
+
+    public function activeQuiz()
+    {
+        return $this->quizzes->where('completed_at', null)->first();
+    }
 }
