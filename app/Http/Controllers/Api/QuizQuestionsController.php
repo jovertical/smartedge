@@ -29,11 +29,13 @@ class QuizQuestionsController extends Controller
     public function store(Request $request, Quiz $quiz)
     {
         $request->validate([
-            'question_count' => "numeric|max:{$quiz->subject->questions->count()}",
+            'question_count' => "numeric|min:1|max:{$quiz->subject->questions->count()}",
         ]);
 
-        return $quiz->subject->questions
+        $quiz->subject->questions
             ->random($request->question_count)
             ->each(fn ($q) => $quiz->createQuestion(['question_id' => $q->id]));
+
+        return $quiz->questions;
     }
 }
