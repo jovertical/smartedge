@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use App\Quiz;
+use App\QuizQuestion;
 use Illuminate\Http\Request;
 
 class QuizQuestionsController extends Controller
@@ -32,9 +33,16 @@ class QuizQuestionsController extends Controller
             'question_count' => "numeric|min:1|max:{$quiz->subject->questions->count()}",
         ]);
 
+        QuizQuestion::where('quiz_id', $quiz->id)->delete();
+
         $quiz->subject->questions
             ->random($request->question_count)
-            ->each(fn ($q) => $quiz->createQuestion(['question_id' => $q->id]));
+            ->each(function ($q, $i) use ($quiz) {
+                $quiz->createQuestion([
+                    'question_id' => $q->id,
+                    'number' => $i + 1,
+                ]);
+            });
 
         return $quiz->questions;
     }

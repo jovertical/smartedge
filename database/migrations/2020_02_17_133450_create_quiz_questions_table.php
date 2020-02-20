@@ -17,6 +17,7 @@ class CreateQuizQuestionsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('quiz_id');
             $table->bigInteger('question_id');
+            $table->integer('number');
             $table->timestamps();
             $table->softDeletes();
         });
