@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Question;
 use App\Quiz;
+use App\QuizQuestion;
 use Illuminate\Http\Request;
 
 class QuizController extends Controller
@@ -16,7 +16,7 @@ class QuizController extends Controller
             ->where('completed_at', null)
             ->first();
 
-        return Quiz::with('answers')->find($quiz->id);
+        return Quiz::with('questions', 'answers')->find($quiz->id);
     }
 
     public function nextQuestion(Quiz $quiz)
@@ -26,9 +26,8 @@ class QuizController extends Controller
         $question = $quiz->questions
             ->filter(fn ($q) => !in_array($q->question_id, $answers))
             ->values()
-            ->first()
-            ->question;
+            ->first();
 
-        return Question::with('answers')->find($question->id);
+        return QuizQuestion::with('question')->find($question->id);
     }
 }
