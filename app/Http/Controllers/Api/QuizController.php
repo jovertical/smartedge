@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Answer;
 use App\Http\Controllers\Controller;
 use App\Question;
 use App\Quiz;
@@ -58,5 +59,17 @@ class QuizController extends Controller
         $question->question = $quizQuestion;
 
         return $question;
+    }
+
+    public function tally(Quiz $quiz)
+    {
+        $correct = $quiz->answers
+            ->filter(fn($a) => Answer::find($a->answer_id)->correct)
+            ->count();
+
+        return [
+            'correct' => $correct,
+            'total' => $quiz->question_count,
+        ];
     }
 }
