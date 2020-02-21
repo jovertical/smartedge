@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Question;
 use App\Quiz;
-use App\QuizQuestion;
 use Illuminate\Http\Request;
 
 class QuizController extends Controller
@@ -16,6 +15,25 @@ class QuizController extends Controller
             ->quizzes
             ->where('completed_at', null)
             ->first();
+
+        if (! $quiz) {
+            abort(404);
+        }
+
+        return Quiz::with('questions', 'answers')->find($quiz->id);
+    }
+
+    public function completedQuiz(Request $request)
+    {
+        $quiz = $request->user()
+            ->quizzes
+            ->where('completed_at', '!=', null)
+            ->latest()
+            ->first();
+
+        if (! $quiz) {
+            abort(404);
+        }
 
         return Quiz::with('questions', 'answers')->find($quiz->id);
     }

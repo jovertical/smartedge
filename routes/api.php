@@ -46,6 +46,7 @@ Route::namespace('Api')->name('api.')->group(function () {
 
         Route::prefix('quiz')->group(function () {
             Route::get('active', 'QuizController@activeQuiz');
+            Route::get('completed', 'QuizController@completedQuiz');
             Route::get('{quiz}/next-question', 'QuizController@nextQuestion');
         });
     });
