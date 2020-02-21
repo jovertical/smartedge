@@ -29,6 +29,10 @@ class QuizController extends Controller
             ->values()
             ->first();
 
+        if (! $quizQuestion) {
+            abort(404);
+        }
+
         $question = Question::with('answers')->find($quizQuestion->question->id);
         $question->question = $quizQuestion;
 
