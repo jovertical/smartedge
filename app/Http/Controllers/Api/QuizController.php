@@ -30,6 +30,9 @@ class QuizController extends Controller
             ->first();
 
         if (! $quizQuestion) {
+            $quiz->completed_at = now();
+            $quiz->update();
+
             abort(404);
         }
 
