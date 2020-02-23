@@ -44,6 +44,7 @@ namespace App{
  *
  * @property int $id
  * @property int $quiz_id
+ * @property int $question_id
  * @property int $answer_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
@@ -56,6 +57,7 @@ namespace App{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizAnswer whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizAnswer whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizAnswer whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizAnswer whereQuestionId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizAnswer whereQuizId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizAnswer whereUpdatedAt($value)
  */
@@ -159,6 +161,48 @@ namespace App{
 
 namespace App{
 /**
+ * App\Announcement
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Announcement newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Announcement newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Announcement query()
+ */
+    class Announcement extends \Eloquent
+    {
+    }
+}
+
+namespace App{
+/**
+ * App\QuizQuestion
+ *
+ * @property int $id
+ * @property int $quiz_id
+ * @property int $question_id
+ * @property int $number
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \App\Question $question
+ * @property-read \App\Quiz $quiz
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizQuestion newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizQuestion newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizQuestion query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizQuestion whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizQuestion whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizQuestion whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizQuestion whereNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizQuestion whereQuestionId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizQuestion whereQuizId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\QuizQuestion whereUpdatedAt($value)
+ */
+    class QuizQuestion extends \Eloquent
+    {
+    }
+}
+
+namespace App{
+/**
  * App\Answer
  *
  * @property int $id
@@ -193,12 +237,16 @@ namespace App{
  * @property int $user_id
  * @property int $subject_id
  * @property string $time_mode
- * @property int $questions_count
  * @property string $checking_mode
+ * @property int $question_count
  * @property string|null $completed_at
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\QuizAnswer[] $answers
+ * @property-read int|null $answers_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\QuizQuestion[] $questions
+ * @property-read int|null $questions_count
  * @property-read \App\Subject $subject
  * @property-read \App\User $user
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz newModelQuery()
@@ -209,7 +257,7 @@ namespace App{
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereDeletedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereQuestionsCount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereQuestionCount($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereSubjectId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereTimeMode($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Quiz whereUpdatedAt($value)

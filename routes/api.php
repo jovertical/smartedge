@@ -50,5 +50,7 @@ Route::namespace('Api')->name('api.')->group(function () {
             Route::get('{quiz}/next-question', 'QuizController@nextQuestion');
             Route::get('{quiz}/tally', 'QuizController@tally');
         });
+
+        Route::apiResource('announcements', 'AnnouncementsController');
     });
 });
