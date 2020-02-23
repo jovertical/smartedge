@@ -13,7 +13,7 @@ class AnnouncementsTableSeeder extends Seeder
     public function run()
     {
         Announcement::create([
-            'name' => 'Sample Announcement',
+            'title' => 'Sample Announcement',
             'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, alias suscipit. Ex, tempore quas consequuntur inventore corrupti voluptatibus sequi expedita hic laborum optio perferendis praesentium rem odio quo. Sunt, possimus?',
         ]);
     }

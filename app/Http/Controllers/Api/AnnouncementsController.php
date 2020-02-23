@@ -27,11 +27,11 @@ class AnnouncementsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required|string',
+            'title' => 'required|string',
             'body' => 'max:500',
         ]);
 
-        return Announcement::create($request->only(['name', 'body']));
+        return Announcement::create($request->only(['title', 'body']));
     }
 
     /**
@@ -55,11 +55,11 @@ class AnnouncementsController extends Controller
     public function update(Request $request, Announcement $announcement)
     {
         $request->validate([
-            'name' => 'required|string',
+            'title' => 'required|string',
             'body' => 'max:500',
         ]);
 
-        $announcement->update($request->only(['name', 'body']));
+        $announcement->update($request->only(['title', 'body']));
         return $announcement;
     }
 
