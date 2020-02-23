@@ -64,7 +64,7 @@ class QuizController extends Controller
     public function tally(Quiz $quiz)
     {
         $correct = $quiz->answers
-            ->filter(fn($a) => Answer::find($a->answer_id)->correct)
+            ->filter(fn ($a) => Answer::find($a->answer_id)->correct)
             ->count();
 
         return [

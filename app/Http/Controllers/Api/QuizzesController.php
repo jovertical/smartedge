@@ -18,4 +18,17 @@ class QuizzesController extends Controller
         return Quiz::with('user', 'subject', 'questions', 'answers')
             ->find($quiz->id);
     }
+
+    /**
+     * Update the specified Quiz in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Quiz  $quiz
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Quiz $quiz)
+    {
+        $quiz->update(['completed_at' => now()]);
+        return $quiz;
+    }
 }
